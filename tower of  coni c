@@ -1,0 +1,18 @@
+#include <stdio.h>
+void towerOfHanoi(int n, char fromone, char toone, char auxone)
+{
+if (n == 1)
+{
+printf("\n Move disk 1 from one %c to one %c", fromone, toone);
+return;
+}
+towerOfHanoi(n-1, fromone, auxone, toone);
+printf("\n Move disk %d from one %c to one %c", n, fromone, toone);
+towerOfHanoi(n-1, auxone, toone, fromone);
+}
+int main()
+{
+int n = 4;
+towerOfHanoi(n, 'A', 'C', 'B');
+return 0;
+}
